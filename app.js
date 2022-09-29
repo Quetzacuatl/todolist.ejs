@@ -20,9 +20,9 @@ app.get("/", function(req,res){
     day = "week";
   }
 
-  res.render('list',{ kindOfDay : day});
-})
+  res.render('list',{kindOfDay: day});
+});
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Server running on port 3000");
-})
+});
