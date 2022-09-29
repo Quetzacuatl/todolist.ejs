@@ -10,15 +10,14 @@ app.set('view engine','ejs');
 
 app.get("/", function(req,res){
 
+  var options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long"
+  };
   var today = new Date();
   var currentDay = today.getDate();
-  var day = "";
-
-  if (currentDay === 6 || currentDay === 7){
-    day = "weekend";
-  }else{
-    day = "week";
-  }
+  var day = today.toLocaleDateString("en-US", options);
 
   res.render('list',{kindOfDay: day});
 });
