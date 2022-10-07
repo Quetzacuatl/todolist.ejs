@@ -3,25 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Todo List</title>
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <h1> Its <%= kindOfDay %> </h1>
 
-<form class="" action="/" method="post">
-  <ul>
-    <!-- <li>Buy Food</li>
-    <li>cook Food</li>
-    <li>Eat food</li>
-    <li><%= newListItem %></li> -->
+    <div class="box" id="heading">
+      <h1> Its <%= kindOfDay %> </h1>
+    </div>
 
-    <% for (let i in newListItem) { %>
-      <li><%= newListItem[i] %></li>
-    <% } %>
+    <div class="box">
+      <% for (let i in newListItem) { %>
+        <div class="item">
+          <input type="checkbox" name="">
+          <p><%= newListItem[i] %></p>
+        </div>
+      <% } %>
+      <form class="item" action="/" method="post">
+        <input type="text" name="newitem" placeholder="add item" autofocus autocomplete="off">
+        <button type="submit" name="button">+</button>
+      </form>
+    </div>
 
-  </ul>
-  <input type="text" name="newitem">
-  <button type="submit" name="button">Add</button>
-</form>
+
+
   </body>
 </html>
